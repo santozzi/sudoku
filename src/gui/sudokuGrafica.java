@@ -25,18 +25,18 @@ import logica.Celda;
 import logica.Nucleo;
 import java.awt.FlowLayout;
 /**
- * Esta clase es el entorno gráfico del Sudoku.
+ * Esta clase es el entorno grï¿½fico del Sudoku.
  * @author Sergio Antozzi
  *
  */
 
 public class sudokuGrafica extends JFrame {
 	//>--Estas constantes son los tres estados posibles de una celda----------<
-	//---FIJO para los números iniciales que no son modificables--------------<
+	//---FIJO para los nï¿½meros iniciales que no son modificables--------------<
 	private static int FIJO=0;
-	//---OK para los números agregados sin error estos son modificables-------<
+	//---OK para los nï¿½meros agregados sin error estos son modificables-------<
 	private static int OK=1;
-	//---ERROR para los números que con contengan por lo menos una colisión---<
+	//---ERROR para los nï¿½meros que con contengan por lo menos una colisiï¿½n---<
 	private static int ERROR=2;
 	//>--Pongo todos los JPanel como atributos globales porque uso metodos para cada uno para que sea mas--
 	//legible--<
@@ -50,9 +50,9 @@ public class sudokuGrafica extends JFrame {
 	private JLabel[] tiempo;
 	//>---Etiqueta para mostrar a la celda auxiliar aux-----<
 	private JLabel temporal;
-	//>---Celda que le dice a la etiqueta temporal que número es-----<
+	//>---Celda que le dice a la etiqueta temporal que nï¿½mero es-----<
 	private Celda  aux;
-	//>---Conexión con la lógica----<
+	//>---Conexiï¿½n con la lï¿½gica----<
 	private Nucleo logica;
 	//>---Reloj es una clase que hace todos los calculos para entregar la imagen correspondiente al tiempo
 	//----transcurrido--------------<
@@ -63,14 +63,14 @@ public class sudokuGrafica extends JFrame {
 	//----La cantidad de cuadrantes en una fila de un sudoku tradicional es 3, este valor lo utilizo para 
 	//----los grid y para algunos for dobles----------<
 	private  int cantCuadrantesXFila;
-	//>---Datos de configuración---------------------<
+	//>---Datos de configuraciï¿½n---------------------<
 	//>---Estos dos constantes son el esacio que hay entre las celdas ------------<
 	private  static final int espacioEntreFilas=2;
 	private static final int espacioEntreColumnas=2;
 	//>---Esta constante es para la cantidad de celdas en blanco al iniciar el juego es un valor que
-	//>---se envia a un metodo de la lógica------------------------<
+	//>---se envia a un metodo de la lï¿½gica------------------------<
 	private static final int cantidadBlancos=30;
-	//>---Es la clase encargada de enviar cada cierto tiempo una instrucción-------<
+	//>---Es la clase encargada de enviar cada cierto tiempo una instrucciï¿½n-------<
 	private Timer tiempoT;
 
 	/**
@@ -103,7 +103,7 @@ public class sudokuGrafica extends JFrame {
 		//>----------------------------------------------------<    
 
 		//>---Configoro el Frame e inicio el panel del contenedor principal--------<
-		setTitle("Proyecto N°2 - TDP 2020 - Sudoku - By Sergio Antozzi");
+		setTitle("Proyecto Nï¿½2 - TDP 2020 - Sudoku - By Sergio Antozzi");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 655, 507);
 		contentPane = new JPanel();
@@ -124,8 +124,8 @@ public class sudokuGrafica extends JFrame {
 	/**
 	 * tablero
 	 * -------
-	 * Este metodo se encarga de llenar de paneles, que luego serán los cuadrantes del 
-	 * tablero, en un panel más grande.
+	 * Este metodo se encarga de llenar de paneles, que luego serï¿½n los cuadrantes del 
+	 * tablero, en un panel mï¿½s grande.
 	 */
 	private void tablero() {
 		//>---Inicializo el contenedor donde van los cuadrantes-------------<
@@ -150,7 +150,7 @@ public class sudokuGrafica extends JFrame {
 	/**
 	 * pnlInicio
 	 * ---------
-	 * En este panal se encuentra el botón que va a llenar el tablero y activar el reloj.
+	 * En este panal se encuentra el botï¿½n que va a llenar el tablero y activar el reloj.
 	 */
 	private void pnlIncio() {
 		JPanel pnlInicio = new JPanel();
@@ -215,7 +215,7 @@ public class sudokuGrafica extends JFrame {
 	 * pnlOpciones
 	 * -----------
 	 * En este panel se encuentran las celdas para elegir, al hacer click sobre una etiqueta,
-	 * esta pasa a la etiqueta auxiliar y luego al hacer click en una etiqueta que no estén fija
+	 * esta pasa a la etiqueta auxiliar y luego al hacer click en una etiqueta que no estï¿½n fija
 	 * en el tablero, se cambia por la etiqueta auxiliar.
 	 */
 	private void pnlOpciones() {
@@ -242,7 +242,7 @@ public class sudokuGrafica extends JFrame {
 	/**
 	 * reloj
 	 * -----
-	 * Este método es el encargado de preguntarle a la clase Reloj qué imágenes debe poner en el 
+	 * Este mï¿½todo es el encargado de preguntarle a la clase Reloj quï¿½ imï¿½genes debe poner en el 
 	 * pnlReloj, las agrega y refresca el pnlReloj cada segundo.
 	 */
 	private void reloj() {
@@ -270,7 +270,7 @@ public class sudokuGrafica extends JFrame {
 	/**
 	 * pnlReloj
 	 * --------
-	 * Inicia el panel donde se encuentra el reloj y agrega imágenes al reloj antes de iniciar
+	 * Inicia el panel donde se encuentra el reloj y agrega imï¿½genes al reloj antes de iniciar
 	 * el juego.
 	 */
 	private void pnlReloj() {
@@ -298,8 +298,8 @@ public class sudokuGrafica extends JFrame {
 	/**
 	 * verificar
 	 * ---------
-	 * Le pregunta a la lógica si la celda ingredada tiene colisiones y de no tenerlas la
-	 * agrega al al tablero y al sistema de verificación de la lógica.
+	 * Le pregunta a la lï¿½gica si la celda ingredada tiene colisiones y de no tenerlas la
+	 * agrega al al tablero y al sistema de verificaciï¿½n de la lï¿½gica.
 	 * 
 	 * @param cel celda a verificar
 	 */
@@ -339,9 +339,9 @@ public class sudokuGrafica extends JFrame {
 	/**
 	 * Aviso
 	 * -----
-	 * Muestra donde están las colisiones y muestra un cartal, luego de precionar aceptar en el cartel
+	 * Muestra donde estï¿½n las colisiones y muestra un cartal, luego de precionar aceptar en el cartel
 	 * devuelve las celdas modificadas a su estado anterior
-	 * @param anterior parametro de tipo entero señalando el rotulo que estaba antes del cambio
+	 * @param anterior parametro de tipo entero seï¿½alando el rotulo que estaba antes del cambio
 	 * @param cel parametro de tipo Celda que indica la celda en donde hice click
 	 * @param colisiones lista donde se encuentran todas las colisiones de celdas.
 	 */
@@ -350,7 +350,7 @@ public class sudokuGrafica extends JFrame {
 		for(Celda colision : colisiones) {
 			casillas[colision.getFila()][colision.getColumna()].setBorder(new LineBorder(new Color(200,0,0)));
 		}
-		JOptionPane.showMessageDialog(null, "No, ahí no se puede");
+		JOptionPane.showMessageDialog(null, "No, ahï¿½ no se puede");
 		casillas[cel.getFila()][cel.getColumna()].setBorder(new LineBorder(new Color(200,200,200)));
 		for(Celda colision : colisiones) {
 			if(colision.getEstado()==FIJO)
